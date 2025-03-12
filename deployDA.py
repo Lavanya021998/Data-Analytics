@@ -7,7 +7,6 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 from plotly.offline import init_notebook_mode
 import plotly.express as px
-matplotlib.use('Agg')
 warnings.filterwarnings("ignore")  # To suppress warnings
 
 import streamlit as st  # UI Module
