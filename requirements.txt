@@ -4,6 +4,7 @@ matplotlib
 numpy
 pandas
 plotly
+openpyxl
 seaborn
 simple-colors
 streamlit
