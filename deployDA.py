@@ -72,7 +72,7 @@ elif df[colname].dtype in [np.int64, np.float64]:
     fig, ax = plt.subplots()
     sns.histplot(numeric_data, bins=20, kde=True, ax=ax)
     st.pyplot(fig)
-st.subheader(":violet[Bi-Variate Analytics (Two Column Data Study):]",divider=True)
+st.subheader(":violet[Bi-Variate Analytics  and Multivariate Analytics:]",divider=True)
 st.dataframe(df.head(7))
 st.write(":green[Pure numeric- To understand the data between number columns we can use correlation coeficient measure from descriptive stats.]")
 # Select only numeric columns
@@ -132,7 +132,7 @@ if 'Training Methodology' in df.columns:
     ax.bar(classes, vals)
     ax.set_title("Comparison of Training Methodology")
     ax.set_ylabel("Frequency")
-    
+    plt.tight_layout()
     st.pyplot(fig)
 else:
      st.error("CSV file must contain a 'Training Methodology' column.")
@@ -143,7 +143,7 @@ if 'Average Salary' in df.columns:
     ax.set_title("Distribution of Salary")
     ax.set_xlabel("Salary")
     ax.set_ylabel("Frequency")
-    
+    plt.tight_layout()
     st.pyplot(fig)
 else:
     st.error("CSV file must contain an 'Average Salary' column.")
@@ -154,12 +154,10 @@ if 'Faculty Expertise' in df.columns:
     df['Faculty Expertise'].value_counts().sort_values(ascending=False)[0:10].plot(kind='pie', autopct="%.0f%%", ax=ax)
     ax.set_title("Faculty Expertise Distribution")
     ax.set_ylabel("")  # Hide y-label for better visualization
-    
+    plt.tight_layout()
     st.pyplot(fig)
 else:
     st.error("CSV file must contain a 'Faculty Expertise' column.")
-st.divider()
-st.subheader(":violet[Multivariate Analysis]",divider=True)
 st.divider()
 cola, colb, colc = st.columns(3)
 with cola:
