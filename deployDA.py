@@ -128,7 +128,7 @@ if 'Training Methodology' in df.columns:
     vals = df['Training Methodology'].value_counts().sort_values(ascending=False)[0:4].values
     
     plt.style.use("dark_background")
-    fig, ax = plt.subplots(figsize=(15, 8))
+    fig, ax = plt.subplots(figsize=(8, 8))
     ax.bar(classes, vals)
     ax.set_title("Comparison of Training Methodology")
     ax.set_ylabel("Frequency")
