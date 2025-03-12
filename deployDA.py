@@ -124,11 +124,11 @@ else:
     st.error("CSV file must contain an 'Institute name' column.")
 st.divider()
 if 'Training Methodology' in df.columns:
-    classes = df['Training Methodology'].value_counts().sort_values(ascending=False)[0:4].index
-    vals = df['Training Methodology'].value_counts().sort_values(ascending=False)[0:4].values
+    classes = df['Training Methodology'].value_counts().sort_values(ascending=False)[0:3].index
+    vals = df['Training Methodology'].value_counts().sort_values(ascending=False)[0:3].values
     
     plt.style.use("dark_background")
-    fig, ax = plt.subplots(figsize=(8, 10))
+    fig, ax = plt.subplots(figsize=(8, 8))
     ax.bar(classes, vals)
     ax.set_title("Comparison of Training Methodology")
     ax.set_ylabel("Frequency")
@@ -138,7 +138,7 @@ else:
      st.error("CSV file must contain a 'Training Methodology' column.")
 st.divider()
 if 'Average Salary' in df.columns:
-    fig, ax = plt.subplots()
+    fig, ax = plt.subplots(figsize=(8, 8))
     ax.hist(df['Average Salary'], bins=20, edgecolor='black')
     ax.set_title("Distribution of Salary")
     ax.set_xlabel("Salary")
@@ -150,7 +150,7 @@ else:
 st.divider()
 if 'Faculty Expertise' in df.columns:
     plt.style.use("classic")
-    fig, ax = plt.subplots()
+    fig, ax = plt.subplots(figsize=(8, 8))
     df['Faculty Expertise'].value_counts().sort_values(ascending=False)[0:10].plot(kind='pie', autopct="%.0f%%", ax=ax)
     ax.set_title("Faculty Expertise Distribution")
     ax.set_ylabel("")  # Hide y-label for better visualization
